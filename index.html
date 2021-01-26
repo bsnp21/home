@@ -2,8 +2,9 @@
 
 <head>
 	<title>.</title>
-	<script src="https://wdingbox.github.io/ham12/jq/jquery-2_1_3.min.js"></script>
 	<base target="_blank" />
+	<script src="https://wdingbox.github.io/ham12/jq/jquery-2_1_3.min.js"></script>
+	<script src="./quotestr.js"></script>
 </head>
 <script>
 	$(function () {
@@ -11,6 +12,7 @@
 		if (url.indexOf(".github.io/") >= 0) {
 			$("#test").text("")
 		}
+		$("#QuotesContainer").html(quotestr)
 	})
 </script>
 <style>
@@ -26,6 +28,10 @@
 	}
 	.smallnote{
 		font-size: xx-small;
+	}
+	.centeredtxt, #QuotesContainer{
+		margin-left: auto;
+		margin-right: auto;
 	}
 </style>
 
@@ -45,29 +51,7 @@
 	</h1>
 
 
-	<blockquote class='centeredtxt'>
-		<q>Studying (researching) the Bible is another practical way to abide in the Word. The difference between
-			reading and studying the Bible involves two additional activities: asking questions of the text and writing
-			down
-			your insight. You haven't really studied the Bible unless you've written your thoughts down on paper or
-			comupter.</q> --Rick Warren (<cite>The Purpose Driven Life</cite>, day24, p187)
-	</blockquote>
-
-	<blockquote class='centeredtxt'>
-		<q>The best way to become a 'doer of the Word' is to always write out an action step as a result of your reading
-			or
-			studying or reflecting on God's Word. Develop the habit of writing down exactly what you intend to do.</q>
-		--Rick
-		Warren (<cite>The Purpose Driven Life</cite>, day24, p190)
-	</blockquote>
-
-	<blockquote class='centeredtxt'>
-		<q>The Bible was not given to increase our knowledge but to change our lives.</q> -- D.L. Moody
-	</blockquote>
-
-	<blockquote>
-		"Your word is a lamp to my feet and a light for my path." (Psm119:105 NIV)
-	</blockquote>
+	<div id="QuotesContainer"></div>
 
 
 </body>
