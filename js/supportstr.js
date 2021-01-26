@@ -1,14 +1,14 @@
 var supportstr =`
 
-    <ol>To support and improve this group.
+    <ol>To support and improve this community, you can choose freely to
     <li>
-    to use it and to give feedback.
+    <b>use</b> the app and to give feedback.
     </li>
     <li>
-    to join our tech team to improve the codes.
+    <b>join</b> our tech team to improve the codes.
     </li>
     <li>
-    to donate financially to maintain the service fee.
+    <b>donate</b> financially to maintain the service fee.
     </li>
 
 
