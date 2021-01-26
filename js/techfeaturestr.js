@@ -32,7 +32,7 @@ Design Features:
     <li>To provide a high quality convenient Bible study tool: A good biblical study tool is like the walking stick ( (Hebrew: מַטֶּה‎ matteh, translated "rod" in the King James Bible) of Moses.
     </li>
     <li>
-    To use advanced technology to serve and glorify for Him rather than the wicked.
+    To use advanced technology to serve and glorify for Him rather than any culture, race and kingdim.
     </li>
 </ol>
 
