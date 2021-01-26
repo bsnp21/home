@@ -22,7 +22,7 @@ var quotestr =`
 	</blockquote>
 
 	<blockquote class='centeredtxt'>
-		<q>Many people have a good habit of writing down a dairy. But it's usually a date based, ordered and centered rather than the Word centered. It would soon become meaningless & usesless. Only the biblical centered notes will shine forever. It is a way to store treasures in Heaven.(Mat 6:20)</q> 
+		<q>Many people have a good habit of writing down a dairy. But it's usually a date based, ordered and centered rather than the Word centered. It would soon become meaningless & usesless. Only the biblical centered notes will shine forever.  It is a way to store treasures in Heaven.(Mat 6:20). It's a way to show that "The Spirit himself testifies with our spirit that we are God's children." (Rom 8:16, NIV).</q> 
 		<br><a class='smallnote'>-- William Wei Ding.</a>
 	</blockquote>
 
