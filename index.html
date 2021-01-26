@@ -7,6 +7,8 @@
 	<link rel="stylesheet" href="./css/index.css">
 	<script src="https://wdingbox.github.io/ham12/jq/jquery-2_1_3.min.js"></script>
 	<script src="./js/quotestr.js"></script>
+	<script src="./js/supportstr.js"></script>
+	<script src="./js/techfeaturestr.js"></script>
 
 </head>
 <script>
@@ -18,15 +20,38 @@
 
 
 		$("#QuotesContainer").html(quotestr)
+		$("#supportstr").html(supportstr)
+		$("#techfeaturestr").html(techfeaturestr)
+
+		$("#support, #techfeature").on("click", function () {
+			$(".footoeHili").removeClass("footoeHili")
+			$(this).addClass("footoeHili")
+			var bFlag = ($(this)[0].classList.contains("footnoteshow"))
+			$(".footnoteshow").hide()
+			var id = $(this).attr("id") + "str"
+			if(!bFlag) $("#" + id).toggle()
+			
+		})
 	})
 </script>
 <style>
-	body{
+	body {
 		background-color: lightblue;
 	}
-.xsmallnote{
-	font-size: x-small;
-}
+
+	.xsmallnote {
+		font-size: x-small;
+	}
+
+	.footnoteshow {
+		display: none;
+	}
+	.footoe{
+		text-decoration: underline;
+	}
+	.footoeHili{
+		background-color: lightgray;
+	}
 </style>
 
 <body>
@@ -48,6 +73,12 @@
 	<div id="QuotesContainer"></div>
 
 
+	<hr />
+	<div class="centeredtxt">
+		<a class="footoe" id="support">Support-us</a> | <a class="footoe"id="techfeature">Technical-features</a>
+	</div>
+	<div class="footnoteshow" id="supportstr" style="display: none;">..</div>
+	<div class="footnoteshow" id="techfeaturestr" style="display: none;">..</div>
 </body>
 
 </html>
