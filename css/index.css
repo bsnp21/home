@@ -1,0 +1,19 @@
+
+
+
+	blockquote {
+		width: 80%;
+		font-size: x-large;
+	}
+
+	.smallnote {
+		font-size: small;
+	}
+
+	.centeredtxt,
+	#QuotesContainer {
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+		width: 70%;
+	}
