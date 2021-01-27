@@ -5,7 +5,7 @@ var quotestr =`
 			reading and studying the Bible involves two additional activities: asking questions of the text and
 			writing down
 			your insight. You haven't really studied the Bible unless you've written your thoughts down on paper or
-			comupter.</q> 
+			computer.</q> 
 			<br><a class='smallnote'>-- Rick Warren (<cite>The Purpose Driven Life</cite>, day24, p187)</a>
 	</blockquote>
 
