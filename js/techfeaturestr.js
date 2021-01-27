@@ -17,9 +17,13 @@ The Bible study notes are classified into three categories and stored in three t
     <tr><td>3</td><td>_myPrayer</td><td>for the prayer related to the verse and real life..</td></tr>
     </tbody>
     </table>
-    * The maximum size of each note-file is limited to 100 (MB).<br>
-    * Recommended size of each piece of note for each verse is one page (about 3,000 characters, 500 words)<br>
-    * There are total 31,102 verses in the Bible.
+    <ul><li>
+    The maximum size of each note-file is limited to 100 (MB).</li>
+    <li>
+    Recommended size of each piece of note for each verse is one page (~3,000 characters or ~500 words). But should be less than 30 pages depending of browser and computer.</li>
+    <li>
+    There are total 31,102 verses in the Bible.</li>
+    <ul>
 </ol>
 
 <ol>
