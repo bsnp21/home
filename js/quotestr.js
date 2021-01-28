@@ -17,13 +17,15 @@ var quotestr =`
 			<br><a class='smallnote'>-- Rick Warren (<cite>The Purpose Driven Life</cite>, day24, p190)</a>
 	</blockquote>
 
-	<blockquote class='centeredtxt'>
-		<q reference='The Purpose Driven Life, day24, p190'>The Bible was not given to increase our knowledge but to change our lives.</q> <br><a class='smallnote'>-- D.L. Moody</a>
-	</blockquote>
 
 	<blockquote class='centeredtxt'>
 		<q>Many people have a good habit of dairy writing. But it's usually a date-ordered, time-based, and cultrue-driven rather than the Scripture-oriented. It would soon become meaningless & usesless. Only the biblical-centered sprititual notes can shine forever. It is a way to grow in HIM. It is a way <cite>to store treasures in Heaven</cite> <a class='smallnote'>(Mat 6:20)</a>. It's a way to show in the world that <cite>'The Spirit himself bears witness with our spirit that we are children of God'</cite> <a class='smallnote'>(Rom8:16 ESV)</a> </q> 
 		<br><a class='smallnote'>-- William Wei Ding.</a>
+	</blockquote>
+
+	
+	<blockquote class='centeredtxt'>
+		<q reference='The Purpose Driven Life, day24, p190'>The Bible was not given to increase our knowledge but to change our lives.</q> <br><a class='smallnote'>-- D.L. Moody</a>
 	</blockquote>
 
 	<blockquote class='centeredtxt'>
