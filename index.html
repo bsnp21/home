@@ -9,7 +9,9 @@
 
 	<link rel="stylesheet" href="./css/index.css">
 	<script src="https://wdingbox.github.io/ham12/jq/jquery-2_1_3.min.js"></script>
-	<script src="https://wdingbox.github.io/ham12/utility/htmf/bsnp/BibleStudyNotePad.js"></script>
+	<script src="https://wdingbox.github.io/ham12/utility/htmf/bsnp/BibleStudyNotePad.js">
+	var NotesFilesTypes = notes_spec_table()
+	</script>
 	<script src="./js/quotestr.js"></script>
 	<script src="./js/supportstr.js"></script>
 	<script src="./js/techfeaturestr.js"></script>
@@ -26,7 +28,7 @@
 		$("#QuotesContainer").html(quotestr)
 		$("#supportstr").html(supportstr)
 
-		var stb = notes_spec_table()
+		var NotesFilesTypes = notes_spec_table()
 		techfeaturestr = techfeaturestr.replace("${NotesFilesTypes}", stb)
 		$("#techfeaturestr").html(techfeaturestr)
 
