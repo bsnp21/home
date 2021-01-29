@@ -5,10 +5,11 @@
 	<base target="_blank" />
 	<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
 	<META name="viewport" content="width=device-witdh, initial-scale=1, maximum-scale=1, user-scale=0">
-	
+
 
 	<link rel="stylesheet" href="./css/index.css">
 	<script src="https://wdingbox.github.io/ham12/jq/jquery-2_1_3.min.js"></script>
+	<script src="https://wdingbox.github.io/ham12/utility/htmf/bsnp/BibleStudyNotePad.js"></script>
 	<script src="./js/quotestr.js"></script>
 	<script src="./js/supportstr.js"></script>
 	<script src="./js/techfeaturestr.js"></script>
@@ -24,6 +25,9 @@
 
 		$("#QuotesContainer").html(quotestr)
 		$("#supportstr").html(supportstr)
+
+		var stb = notes_spec_table()
+		techfeaturestr = techfeaturestr.replace("${NotesFilesTypes}", stb)
 		$("#techfeaturestr").html(techfeaturestr)
 
 		$("#support, #techfeature").on("click", function () {
@@ -32,10 +36,28 @@
 			var bFlag = ($(this)[0].classList.contains("footnoteshow"))
 			$(".footnoteshow").hide()
 			var id = $(this).attr("id") + "str"
-			if(!bFlag) $("#" + id).toggle()
-			
+			if (!bFlag) $("#" + id).toggle()
+
 		})
 	})
+	function notes_spec_table() {
+		var trs = ""
+		Object.keys(CNST.FnameOfBibleObj).forEach(function (key) {
+			if (key[0] === "_") {
+				trs += `<tr><td>${i + 1}</td><td>${key}</td><td>${CNST.FnameOfBibleObj[key]}</td></tr>`
+			}
+		})
+		var tb = `<table border='1'>
+    <caption></caption>
+    <thead>
+    <tr><th>#</th><th>Type of Notes(files)</th><th>Description</th></tr>
+    </thead>
+	<tbody>
+		${trs}
+	</tbody>
+	</table>`
+		return tb
+	}
 </script>
 <style>
 	body {
@@ -49,10 +71,12 @@
 	.footnoteshow {
 		display: none;
 	}
-	.footoe{
+
+	.footoe {
 		text-decoration: underline;
 	}
-	.footoeHili{
+
+	.footoeHili {
 		background-color: lightgray;
 	}
 </style>
@@ -78,8 +102,8 @@
 
 	<hr />
 	<div class="centeredtxt">
-		<a class="footoe"id="techfeature">Technical-features</a> |
-		<a class="footoe" id="support">Support-us</a>  
+		<a class="footoe" id="techfeature">Technical-specification</a> |
+		<a class="footoe" id="support">Support-us</a>
 	</div>
 	<div class="footnoteshow" id="supportstr" style="display: none;">..</div>
 	<div class="footnoteshow" id="techfeaturestr" style="display: none;">..</div>

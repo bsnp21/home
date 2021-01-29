@@ -2,21 +2,7 @@ var techfeaturestr =`
 
 <ol>
 The Bible study notes are classified into three categories and stored in three text files in user's repository respectively:
-    <table border='1'>
-    <caption></caption>
-    <thead>
-    <tr><th>#</th><th>Type of Notes(files)</th><th>Description</th></tr>
-    </thead>
-    <tbody>
-    <tr><td>1</td><td>_myCrossReferences</td><td>for related verses in the Bible. Recommended to follow the standard abbreviation format. E.g. 
-    <br>Gen2:7 refers to Genesis, chapter 2, verse 7.
-    <br>1Jn5:12 refers to 1-John, chapter 5, verse 12.</td></tr>
-
-    <tr><td>2</td><td>_myNotes</td><td>for commentary, questions, testimony, reflections, takeaway, other website links etc.</td></tr>
-
-    <tr><td>3</td><td>_myPrayer</td><td>for the prayer related to the verse and real life..</td></tr>
-    </tbody>
-    </table>
+    ${NotesFilesTypes}
     <ul><li>
     The maximum size of each note-file is limited to 100 (MB).</li>
     <li>
