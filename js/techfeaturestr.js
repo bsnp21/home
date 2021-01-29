@@ -2,7 +2,7 @@ var techfeaturestr =`
 
 <ol>
 The Bible study notes are classified into three categories and stored in three text files in user's repository respectively:
-    ${NotesFilesTypes}
+    $[NotesFilesTypes]
     <ul><li>
     The maximum size of each note-file is limited to 100 (MB).</li>
     <li>
