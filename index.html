@@ -29,7 +29,7 @@
 		$("#supportstr").html(supportstr)
 
 		var NotesFilesTypes = notes_spec_table()
-		techfeaturestr = techfeaturestr.replace("$[NotesFilesTypes]", stb)
+		techfeaturestr = techfeaturestr.replace("$[NotesFilesTypes]", NotesFilesTypes)
 		$("#techfeaturestr").html(techfeaturestr)
 
 		$("#support, #techfeature").on("click", function () {
