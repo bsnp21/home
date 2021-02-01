@@ -23,7 +23,7 @@ To facilitate quickly writing note on any verse in the Bible, the app
 
 <ol>
 Design Features:
-    <li>Biblical-oriented design: The program is biblical structured, implemented and operated.</li>
+    <li>Biblical-oriented design (BOD): The program is biblical structured, implemented and operated. Application may change from time to time, but the user's bibliical-orented structure will never changes, users data can be a gift and the witness of history, or be sold as the resources for other application. User's data belong to users -- 'Its your data.'</li>
     <li>On-line app. No installation; No Ad; No virus; No hassle.</li>
     <li>Account free: The app does not own any user account. (The user account belongs to the github) </li>
     <li>Cross-network sharing: Provide a safe way to share notes with certain rules.</li>
