@@ -44,7 +44,7 @@
 	function notes_spec_table() {
 		var trs = "", i = 1
 		Object.keys(CNST.FnameOfBibleObj).forEach(function (key) {
-			if (key[0] === "_") {
+			if (key.match(/^e_/)) {
 				trs += `<tr><td>${i++}</td><td>${key}</td><td>${CNST.FnameOfBibleObj[key]}</td></tr>`
 			}
 		})
