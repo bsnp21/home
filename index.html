@@ -21,8 +21,9 @@
 	$(function () {
 		var urlink = `http://${config.master_ip}?ip=${config.service_ip}:${config.master_port}`
 		$(".master_link").attr("href", urlink)
-		
-		
+		$(".SignInIP").text(`SignInIP=${config.master_ip}`)
+
+
 		var url = "" + document.location.href
 		if (url.indexOf(".github.io/") >= 0) {
 			$("#test").text("")
@@ -89,12 +90,13 @@
 
 <body>
 
-	<div class="xsmallnote"><a href="https://bsnp21.github.io/home/">SignInIP=
+	<div class="xsmallnote SignInIP"><a href="https://bsnp21.github.io/home/">SignInIP=
 
-</a></div>
+		</a></div>
 
 	<h1 style="text-align: center;margin-top: 50px;margin-bottom: 0px;">
-		<a class='master_link' href="http:///wdaws/ham12/utility/htmf/bsnp/mySignIn.htm?ip=:7778">Bible Study Note Pad</a>
+		<a class='master_link' href="http:///wdaws/ham12/utility/htmf/bsnp/mySignIn.htm?ip=:7778">Bible Study Note
+			Pad</a>
 	</h1>
 	<h3 style="text-align: center;margin-top: 0px;"><a class="master_link">(Enter)</a><br></h3>
 
