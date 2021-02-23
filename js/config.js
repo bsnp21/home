@@ -1,4 +1,1 @@
-var config ={
-    master_ip:'',
-    service_ip:''
-}
+var config={master_port:7778, master_ip:'34.227.20.213', service_ip:'34.227.20.213'}
