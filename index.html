@@ -19,7 +19,7 @@
 </head>
 <script>
 	$(function () {
-		var urlink = `http://${config.master_ip}:${config.master_port}?ip=${config.service_ip}:${config.master_port}`
+		var urlink = `http://${config.master_ip}?ip=${config.service_ip}:${config.master_port}`
 		$(".master_link").attr("href", urlink)
 		
 		
