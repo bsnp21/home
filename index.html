@@ -19,6 +19,9 @@
 </head>
 <script>
 	$(function () {
+		$(".master_link").attr("href", `http://${config.master_ip}:${config.master_port}?ip=${config.service_ip}:${config.master_port}`)
+		
+		
 		var url = "" + document.location.href
 		if (url.indexOf(".github.io/") >= 0) {
 			$("#test").text("")
