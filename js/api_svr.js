@@ -1,1 +1,0 @@
-var API_SVR_ADDRESS="https://34.227.20.213:7775"
