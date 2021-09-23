@@ -113,13 +113,13 @@
         <a></a><br>
 		<a href="http://34.227.20.213/wdaws/ham12/utility/htmf/bsnp/mySignIn.htm?ip=34.227.20.213:7775">http://34.227.20.213/wdaws/ham12/utility/htmf/bsnp/mySignIn.htm?ip=34.227.20.213:7775</a><br>
 		<a href="http://34.227.20.213/wdaws/ham12/utility/htmf/bsnp/mySignIn.htm?ip=34.227.20.213:7775">http://34.227.20.213/wdaws/ham12/utility/htmf/bsnp/mySignIn.htm?ip=https://34.227.20.213:7775</a><br>
-		<a></a><br>
+		<a href="https://34.227.20.213:7775/Jsonpster/?inp=CUID0.0"></a><br>
         <a></a><br>
 
 		<a></a><br>
         <a href="./tools/">tools</a><br>
 		<a></a><br>
-        <a></a><br>
+        <button href=""></button><br>
 		<a></a><br>
         <a></a><br>
 		<a></a><br>
@@ -132,3 +132,13 @@
 </body>
 
 </html>
+<script>
+	$(function(){
+		$("a").each(function(){
+			var tx=$(this).text()
+			if(tx.length===0){
+				$(this).text(this.attr("href"))
+			}
+		})
+	})
+</script>
