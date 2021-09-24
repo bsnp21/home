@@ -11,7 +11,7 @@
 	<script src="https://wdingbox.github.io/ham12/jq/jquery-2_1_3.min.js"></script>
 	<script src="https://wdingbox.github.io/ham12/utility/htmf/bsnp/BibleStudyNotePad.js?v2021-01">
 	</script>
-	<script src="./js/config.js"></script>
+	<script src="./js/config_api_svr.js"></script>
 	<script src="./js/quotestr.js"></script>
 	<script src="./js/supportstr.js"></script>
 	<script src="./js/techfeaturestr.js"></script>
@@ -46,6 +46,8 @@
 			if (!bFlag) $("#" + id).toggle()
 
 		})
+
+		$("#Signinhttp1").attr("href",)
 	})
 	function notes_spec_table() {
 		var trs = "", i = 1
@@ -101,10 +103,10 @@
 
 		<img src="img/qrcode_bsnp21.github.io.png"></img>
 	<h1 style="text-align: center;margin-top: 50px;margin-bottom: 0px;">
-		<a class='master_link' href="http:///wdaws/ham12/utility/htmf/bsnp/mySignIn.htm?ip=:7778">Bible Study Note
+		<a class='master_link' id="Signinhttp1" href="http:///wdaws/ham12/utility/htmf/bsnp/mySignIn.htm?ip=:7778">Bible Study Note
 			Pad</a>
 	</h1>
-	<h3 style="text-align: center;margin-top: 0px;"><a class="master_link">(Sign-in)</a><br></h3>
+	<h2 style="text-align: center;margin-top: 0px;"><a class="master_link" id="Signinhttps">(Sign-in)</a><br></h2>
 
 
 	<h1 style="text-align: center;margin-top: 50px;">
