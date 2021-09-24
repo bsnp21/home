@@ -1,1 +1,6 @@
-var api_svr={ip:"http://34.227.20.213:7778",ips:"https//34.227.20.213:7775",}
+var api_svr = {
+    ip: "34.227.20.213",
+    http_port: "7778",
+    https_port:"7775",
+    web_path:"/wdaws/bb/np/mySign.htm",
+}
