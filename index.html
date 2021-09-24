@@ -11,63 +11,14 @@
 	<script src="https://wdingbox.github.io/ham12/jq/jquery-2_1_3.min.js"></script>
 	<script src="https://wdingbox.github.io/ham12/utility/htmf/bsnp/BibleStudyNotePad.js?v2021-01">
 	</script>
+	<script src="./js/config_data.js"></script>
 	<script src="./js/config_api_svr.js"></script>
 	<script src="./js/quotestr.js"></script>
 	<script src="./js/supportstr.js"></script>
 	<script src="./js/techfeaturestr.js"></script>
 
 </head>
-<script>
-	$(function () {
-		var urlink = `http://${config.master_ip}?ip=${config.service_ip}:${config.master_port}`
-		$(".master_link").attr("href", urlink)
-		$(".SignInIP").text(`SignInIP=${config.master_ip}`)
 
-
-		var url = "" + document.location.href
-		if (url.indexOf(".github.io/") >= 0) {
-			$("#test").text("")
-		}
-
-
-		$("#QuotesContainer").html(quotestr)
-		$("#supportstr").html(supportstr)
-
-		var NotesFilesTypes = notes_spec_table()
-		techfeaturestr = techfeaturestr.replace("$[NotesFilesTypes]", NotesFilesTypes)
-		$("#techfeaturestr").html(techfeaturestr)
-
-		$("#support, #techfeature").on("click", function () {
-			$(".footoeHili").removeClass("footoeHili")
-			$(this).addClass("footoeHili")
-			var bFlag = ($(this)[0].classList.contains("footnoteshow"))
-			$(".footnoteshow").hide()
-			var id = $(this).attr("id") + "str"
-			if (!bFlag) $("#" + id).toggle()
-
-		})
-
-		$("#Signinhttp1").attr("href",)
-	})
-	function notes_spec_table() {
-		var trs = "", i = 1
-		Object.keys(CNST.FnameOfBibleObj).forEach(function (key) {
-			if (key.match(/^e_/)) {
-				trs += `<tr><td>${i++}</td><td>${key}</td><td>${CNST.FnameOfBibleObj[key]}</td></tr>`
-			}
-		})
-		var tb = `<table border='1'>
-    <caption></caption>
-    <thead>
-    <tr><th>#</th><th>Type of Notes(files)</th><th>Description</th></tr>
-    </thead>
-	<tbody>
-		${trs}
-	</tbody>
-	</table>`
-		return tb
-	}
-</script>
 <style>
 	body {
 		background-color: lightblue;
@@ -103,7 +54,7 @@
 
 		<img src="img/qrcode_bsnp21.github.io.png"></img>
 	<h1 style="text-align: center;margin-top: 50px;margin-bottom: 0px;">
-		<a class='master_link' id="Signinhttp1" href="http:///wdaws/ham12/utility/htmf/bsnp/mySignIn.htm?ip=:7778">Bible Study Note
+		<a class='master_link' id="Signinhttp_" href="http:///wdaws/ham12/utility/htmf/bsnp/mySignIn.htm?ip=:7778">Bible Study Note
 			Pad</a>
 	</h1>
 	<h2 style="text-align: center;margin-top: 0px;"><a class="master_link" id="Signinhttps">(Sign-in)</a><br></h2>
@@ -132,3 +83,57 @@
 </body>
 
 </html>
+
+<script>
+	var cfg = new config_api_svr(config_data)
+	$(function () {
+		var urlink = ''
+		$("#Signinhttp_").attr("href", cfg.web_url("http"))
+		$("#Signinhttps").attr("href", cfg.web_url("https"))
+		$(".SignInIP").text(`SvrIP= ${config_data.ip}`)
+
+
+		var url = "" + document.location.href
+		if (url.indexOf(".github.io/") >= 0) {
+			$("#test").text("")
+		}
+
+
+		$("#QuotesContainer").html(quotestr)
+		$("#supportstr").html(supportstr)
+
+		var NotesFilesTypes = notes_spec_table()
+		techfeaturestr = techfeaturestr.replace("$[NotesFilesTypes]", NotesFilesTypes)
+		$("#techfeaturestr").html(techfeaturestr)
+
+		$("#support, #techfeature").on("click", function () {
+			$(".footoeHili").removeClass("footoeHili")
+			$(this).addClass("footoeHili")
+			var bFlag = ($(this)[0].classList.contains("footnoteshow"))
+			$(".footnoteshow").hide()
+			var id = $(this).attr("id") + "str"
+			if (!bFlag) $("#" + id).toggle()
+
+		})
+
+		$("#Signinhttp1").attr("href")
+	})
+	function notes_spec_table() {
+		var trs = "", i = 1
+		Object.keys(CNST.FnameOfBibleObj).forEach(function (key) {
+			if (key.match(/^e_/)) {
+				trs += `<tr><td>${i++}</td><td>${key}</td><td>${CNST.FnameOfBibleObj[key]}</td></tr>`
+			}
+		})
+		var tb = `<table border='1'>
+    <caption></caption>
+    <thead>
+    <tr><th>#</th><th>Type of Notes(files)</th><th>Description</th></tr>
+    </thead>
+	<tbody>
+		${trs}
+	</tbody>
+	</table>`
+		return tb
+	}
+</script>

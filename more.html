@@ -11,61 +11,16 @@
 	<script src="https://wdingbox.github.io/ham12/jq/jquery-2_1_3.min.js"></script>
 	<script src="https://wdingbox.github.io/ham12/utility/htmf/bsnp/BibleStudyNotePad.js?v2021-01">
 	</script>
-	<script src="./js/config.js"></script>
+	
 	<script src="./js/quotestr.js"></script>
 	<script src="./js/supportstr.js"></script>
 	<script src="./js/techfeaturestr.js"></script>
 
+	<script src="./js/config_data.js"></script>
+	<script src="./js/config_api_svr.js"></script>
+
 </head>
-<script>
-	$(function () {
-		var urlink = `http://${config.master_ip}?ip=${config.service_ip}:${config.master_port}`
-		$(".master_link").attr("href", urlink)
-		$(".SignInIP").text(`SignInIP=${config.master_ip}`)
 
-
-		var url = "" + document.location.href
-		if (url.indexOf(".github.io/") >= 0) {
-			$("#test").text("")
-		}
-
-
-		$("#QuotesContainer").html(quotestr)
-		$("#supportstr").html(supportstr)
-
-		var NotesFilesTypes = notes_spec_table()
-		techfeaturestr = techfeaturestr.replace("$[NotesFilesTypes]", NotesFilesTypes)
-		$("#techfeaturestr").html(techfeaturestr)
-
-		$("#support, #techfeature").on("click", function () {
-			$(".footoeHili").removeClass("footoeHili")
-			$(this).addClass("footoeHili")
-			var bFlag = ($(this)[0].classList.contains("footnoteshow"))
-			$(".footnoteshow").hide()
-			var id = $(this).attr("id") + "str"
-			if (!bFlag) $("#" + id).toggle()
-
-		})
-	})
-	function notes_spec_table() {
-		var trs = "", i = 1
-		Object.keys(CNST.FnameOfBibleObj).forEach(function (key) {
-			if (key.match(/^e_/)) {
-				trs += `<tr><td>${i++}</td><td>${key}</td><td>${CNST.FnameOfBibleObj[key]}</td></tr>`
-			}
-		})
-		var tb = `<table border='1'>
-    <caption></caption>
-    <thead>
-    <tr><th>#</th><th>Type of Notes(files)</th><th>Description</th></tr>
-    </thead>
-	<tbody>
-		${trs}
-	</tbody>
-	</table>`
-		return tb
-	}
-</script>
 <style>
 	body {
 		background-color: lightblue;
@@ -100,35 +55,32 @@
 
 	<a class="link" href="https://wdingbox.github.io/pubs/thesis/weid/htmdoc/proj/index.htm">thesis</a> <br>
 	<a></a><br>
-	<a></a><br>
-
-	<a
-		href="https://wdingbox.github.io/ham12/utility/htmf/bsnp/mySignIn.htm?ip=34.227.20.213:7775">https://wdingbox.github.io/ham12/utility/htmf/bsnp/mySignIn.htm?ip=34.227.20.213:7775</a><br>
-
-	<a
-		href="https://wdingbox.github.io/ham12/utility/htmf/bsnp/mySignIn.htm?ip=https://34.227.20.213:7775">https://wdingbox.github.io/ham12/utility/htmf/bsnp/mySignIn.htm?ip=https://34.227.20.213:7775</a><br>
-
-	<a></a><br>
-	<a></a><br>
-	<a></a><br>
-	<a></a><br>
-	<a></a><br>
-	<a></a><br>
-	<a
-		href="http://34.227.20.213/wdaws/ham12/utility/htmf/bsnp/mySignIn.htm?ip=34.227.20.213:7775">http://34.227.20.213/wdaws/ham12/utility/htmf/bsnp/mySignIn.htm?ip=34.227.20.213:7775</a><br>
-	<a
-		href="http://34.227.20.213/wdaws/ham12/utility/htmf/bsnp/mySignIn.htm?ip=34.227.20.213:7775">http://34.227.20.213/wdaws/ham12/utility/htmf/bsnp/mySignIn.htm?ip=https://34.227.20.213:7775</a><br>
-	<a href="https://34.227.20.213:7775/Jsonpster/?inp=CUID0.0"></a><br>
-	<a></a><br>
-
-	<a></a><br>
-	<a href="./tools/">tools</a><br>
-	<a></a><br>
 	<a href=" https://bsnp21.github.io/tools/"></a><br>
 	<a></a><br>
 	<a></a><br>
 	<a></a><br>
-	<a href="https://bsnp21.github.io/bb/"></a><br>
+	<a></a><br>
+	<a></a><br>
+	<a></a><br>
+	<a></a><br>
+	<a href="https://bsnp21.github.io/bb/?ip=http://1.1.1.1:7778"></a><br>
+	<a href="https://bsnp21.github.io/bb/?ip=https://1.1.1.1:7775"></a><br>
+	<a></a><br>
+	<a></a><br>
+	<a></a><br>
+	<a></a><br>
+	<a></a><br>
+	<a></a><br>
+	<a></a><br>
+	
+	<a></a><br>
+
+	<a></a><br>
+	
+	<a></a><br>
+	<a></a><br>
+	<a></a><br>
+	<a></a><br>
 	<a></a><br>
 	<a></a><br>
 
@@ -140,6 +92,14 @@
 <script>
 	$(function () {
 		$("a").each(function () {
+
+			var shref=$(this).attr("href")
+			if(shref && shref.indexOf("1.1.1.1")>0){
+				var url = shref.replace("1.1.1.1",config_data.ip)
+				$(this).attr("href",url)
+			}
+
+
 			var tx = $(this).text()
 			if (tx.length === 0) {
 				$(this).text($(this).attr("href"))
