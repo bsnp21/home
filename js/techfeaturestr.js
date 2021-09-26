@@ -1,7 +1,7 @@
 var techfeaturestr =`
 
 <ol>
-The Bible study notes are classified into several categories and stored in different text files in user's repository respectively:
+The personal notes made on each verse are biblically structured. They can be kept downloaded, shared, reused or shared by other apps.  The study notes are classified into several categories and stored in different text files in user's repository respectively:
     $[NotesFilesTypes]
     <ul><li>
     The maximum size of each note-file is limited to 100 (MB).</li>
