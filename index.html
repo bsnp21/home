@@ -47,10 +47,8 @@
 	}
 	</style>
 <body>
-
-	<div class="xsmallnote SignInIP"><a href="https://bsnp21.github.io/home/">SignInIP=
-
-		</a></div>
+	<a id="test_https_work" href="" target="_self">Ssl Test</a>
+	<div class="xsmallnote SignInIP"><a href="https://bsnp21.github.io/home/">SignInIP=</a></div>
 
 		<img src="img/qrcode_bsnp21.github.io.png"></img>
 	<h1 style="text-align: center;margin-top: 50px;margin-bottom: 0px;">
@@ -87,7 +85,8 @@
 <script>
 	var cfg = new config_api_svr(config_data)
 	$(function () {
-		var urlink = ''
+
+		$("#test_https_work").attr("href", cfg.test_https_work())
 		$("#Signinhttp_").attr("href", cfg.web_url("http"))
 		$("#Signinhttps").attr("href", cfg.web_url("https"))
 		$(".SignInIP").text(`SvrIP= ${config_data.ip}`)
