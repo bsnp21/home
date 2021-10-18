@@ -7,7 +7,7 @@ config_api_svr.prototype.web_url = function (proctocol) {
     return url
 }
 config_api_svr.prototype.rest_addr = function (proctocol) {
-    var potname = `${proctocol}_port`
+    var potname = `${proctocol}_port`  //proctocol=http or https 
     var port = this.config_data[potname]
     var url = `${proctocol}://${this.config_data.ip}:${port}`
     return url
