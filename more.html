@@ -16,7 +16,7 @@
 	<script src="./js/supportstr.js"></script>
 	<script src="./js/techfeaturestr.js"></script>
 
-	<script src="./js/config_data.js"></script>
+	<script src="./js/config_websvr_data.js"></script>
 	<script src="./js/config_api_svr.js"></script>
 
 </head>
@@ -99,7 +99,7 @@
 
 			var shref=$(this).attr("href")
 			if(shref && shref.indexOf("1.1.1.1")>0){
-				var url = shref.replace("1.1.1.1",config_data.ip)
+				var url = shref.replace("1.1.1.1",config_websvr_data.ip)
 				$(this).attr("href",url)
 			}
 
