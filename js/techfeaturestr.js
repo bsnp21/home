@@ -2,13 +2,25 @@ var techfeaturestr =`
 
 <ol>
 The personal notes made on each verse are biblically structured. They can be kept downloaded, shared, reused or shared by other apps.  The study notes are classified into several categories and stored in different text files in user's repository respectively:
-    $[NotesFilesTypes]
-    <ul><li>
+   
+    <table border='1'>
+    <caption></caption>
+    <thead>
+    <tr><th>#</th><th>Type of Notes(files)</th><th>Description</th></tr>
+    </thead>
+	<tbody id='techfeaturestr_tbody'>
+		
+	</tbody>
+	</table>
+
+    <ul>
+    <li>
     The maximum size of each note-file is limited to 100 (MB).</li>
     <li>
     Recommended size of each piece of note for each verse is one page (~3,000 characters or ~500 words). It's better to be less than 30 pages depending of browser and computer.</li>
     <li>
-    There are total 31,102 verses in the Bible.</li>
+    There are total 31,102 verses in the Bible.
+    </li>
     <ul>
 </ol>
 

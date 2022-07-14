@@ -1,9 +1,15 @@
 function config_api_svr(configdata) {
     this.config_websvr_data = configdata
 }
-config_api_svr.prototype.web_url = function (proctocol) {
+config_api_svr.prototype.web_url = function (proctocol, usrname) {
     var rest_addr = this.rest_addr(proctocol)
     var url = `http://${this.config_websvr_data.ip}/${this.config_websvr_data.mySignIn_path_file}?ip=${rest_addr}`
+
+    if (Samples_Guests_Info[usrname]) {
+        Object.entries(Samples_Guests_Info[usrname]).forEach(
+            ([key, value]) => url += `&${key}=${value}`
+        );
+    }
     return url
 }
 config_api_svr.prototype.rest_addr = function (proctocol) {

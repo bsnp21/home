@@ -57,8 +57,11 @@
 
 <body>
 	<a id="test_https_work" href="" target="_self">Ssl Test</a>
-	<div class="xsmallnote SignInIP"><a href="https://bsnp21.github.io/home/">SignInIP=</a></div>
-	
+	<h5 style="text-left: center;margin-top: 0px;"><a class="master_link" id="Signinhttps">(Secure Sign-in)</a><br></h5>
+
+
+	<div class="xsmallnote" id="SignInIP"><a href="https://bsnp21.github.io/home/">SignInIP=</a></div>
+
 	<iframe src="https://bsnp21.github.io/tools/oclock/arc_sector/Arclock.html"></iframe>
 	<img src="img/qrcode_bsnp21.github.io.png"></img>
 
@@ -66,14 +69,26 @@
 
 
 
-
+	<p style="text-align: center;margin-top: 50px;margin-bottom: 0px;font-size:50px;">
+		Bible
+		Study Note
+		Pad</p>
 	<h1 style="text-align: center;margin-top: 50px;margin-bottom: 0px;">
-		<a class='master_link' id="Signinhttp_" href="http:///wdaws/ham12/utility/htmf/bsnp/mySignIn.htm?ip=:7778">Bible
-			Study Note
-			Pad</a>
+		<a class='master_link' id="Signinhttp_" href="http:///wdaws/ham12/utility/htmf/bsnp/mySignIn.htm?ip=:7778">
+			User Sign-in</a>
 	</h1>
-	<h2 style="text-align: center;margin-top: 0px;"><a class="master_link" id="Signinhttps">(Sign-in)</a><br></h2>
 
+	<p style="text-align: center;margin-top: 50px;margin-bottom: 0px;font-size:20px;">
+	<a id="Guest01" href="">
+		Guest Login
+	</a>	
+	</p>
+
+	<p style="text-align: center;margin-top: 50px;margin-bottom: 0px;font-size:20px;">
+		<a id="Guest02" href="">
+			 Test
+		</a>	
+		</p>
 
 
 
@@ -104,13 +119,24 @@
 </html>
 
 <script>
-	var cfg = new config_api_svr(config_websvr_data)
+	
 	$(function () {
+
+		cfg_text()
+
+		htm_context()
+	})
+
+	function cfg_text(){
+		var cfg = new config_api_svr(config_websvr_data)
 
 		$("#test_https_work").attr("href", cfg.test_https_work())
 		$("#Signinhttp_").attr("href", cfg.web_url("http"))
 		$("#Signinhttps").attr("href", cfg.web_url("https"))
-		$(".SignInIP").text(`SvrIP= ${config_websvr_data.ip}`)
+		$("#SignInIP").text(`SvrIP= ${config_websvr_data.ip}`)
+
+		$("#Guest01").attr("href", cfg.web_url("http", "guest01"))
+		$("#Guest02").attr("href", cfg.web_url("http", "guest02"))
 
 
 		var url = "" + document.location.href
@@ -119,12 +145,26 @@
 		}
 
 
+
+	}
+
+	function htm_context() {
+
+		function notes_spec_table() {
+			var trs = "", i = 1
+			Object.keys(CNST.FnameOfBibleObj).forEach(function (key) {
+				if (key.match(/^e_/)) {
+					trs += `<tr><td>${i++}</td><td>${key}</td><td>${CNST.FnameOfBibleObj[key]}</td></tr>`
+				}
+			})
+			return trs
+		}
+
 		$("#QuotesContainer").html(quotestr)
 		$("#supportstr").html(supportstr)
 
-		var NotesFilesTypes = notes_spec_table()
-		techfeaturestr = techfeaturestr.replace("$[NotesFilesTypes]", NotesFilesTypes)
 		$("#techfeaturestr").html(techfeaturestr)
+		$("#techfeaturestr_tbody").html(notes_spec_table())
 
 		$("#support, #techfeature").on("click", function () {
 			$(".footoeHili").removeClass("footoeHili")
@@ -135,25 +175,5 @@
 			if (!bFlag) $("#" + id).toggle()
 
 		})
-
-		$("#Signinhttp1").attr("href")
-	})
-	function notes_spec_table() {
-		var trs = "", i = 1
-		Object.keys(CNST.FnameOfBibleObj).forEach(function (key) {
-			if (key.match(/^e_/)) {
-				trs += `<tr><td>${i++}</td><td>${key}</td><td>${CNST.FnameOfBibleObj[key]}</td></tr>`
-			}
-		})
-		var tb = `<table border='1'>
-    <caption></caption>
-    <thead>
-    <tr><th>#</th><th>Type of Notes(files)</th><th>Description</th></tr>
-    </thead>
-	<tbody>
-		${trs}
-	</tbody>
-	</table>`
-		return tb
 	}
 </script>
