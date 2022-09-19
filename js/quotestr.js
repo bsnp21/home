@@ -36,7 +36,7 @@ var quotestr =`
 	</blockquote>
 
 	<blockquote class='centeredtxt'>
-		<q reference='The Purpose Driven Life, day24, p190'>The Bible was not given to increase our knowledge but to change our lives.</q> <br><a class='smallnote'>-- D.L. Moody</a>
+		<q reference='The Purpose Driven Life, day24, p190'>The Bible was not given to increase our knowledge but to change our lives.</q> <br><a class='smallnote'>-- D.L. Moody (The Purpose Driven Life, day24, p190) </a>
 	</blockquote>
 
 
