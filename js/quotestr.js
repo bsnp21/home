@@ -24,10 +24,6 @@ var quotestr =`
 	</blockquote>
 
 	
-	<blockquote class='centeredtxt'>
-		<q reference='The Purpose Driven Life, day24, p190'>The Bible was not given to increase our knowledge but to change our lives.</q> <br><a class='smallnote'>-- D.L. Moody</a>
-	</blockquote>
-
 
 	<blockquote class='centeredtxt'>
 		Jesus said:
@@ -37,6 +33,10 @@ var quotestr =`
 		<a class='smallnote'>(Jhn15:5 NIV)</a>
 		As far as writings, the Bible is the root; our human words are branches.
 		<br><a class='smallnote'>-- William Wei Ding</a>
+	</blockquote>
+
+	<blockquote class='centeredtxt'>
+		<q reference='The Purpose Driven Life, day24, p190'>The Bible was not given to increase our knowledge but to change our lives.</q> <br><a class='smallnote'>-- D.L. Moody</a>
 	</blockquote>
 
 
