@@ -19,7 +19,7 @@ var quotestr =`
 
 
 	<blockquote class='centeredtxt'>
-		<q>Many people have a good habit of dairy writing. But it's usually a date-ordered, time-based, and cultrue-driven rather than the Scripture-oriented. It would soon become meaningless & usesless. Only the biblical-centered sprititual notes can shine forever. It is a way to grow in HIM. It is a way <cite>to store treasures in Heaven</cite> <a class='smallnote'>(Mat 6:20)</a>. It's a way to show in the world that <cite>'The Spirit himself bears witness with our spirit that we are children of God'</cite> <a class='smallnote'>(Rom8:16 ESV)</a> </q> 
+		<q>Many people have a good habit of dairy writing. But it's usually a date-ordered, time-based, and cultrue-driven rather than the Scripture-oriented. It would soon become meaningless & usesless. Only the biblical-centered sprititual notes can shine forever. It is a way to grow in HIM. It is a way <cite class='bibleverse'>to store treasures in Heaven</cite> <a class='smallnote'>(Mat 6:20)</a>. It's a way to show in the world that <cite class='bibleverse'>'The Spirit himself bears witness with our spirit that we are children of God'</cite> <a class='smallnote'>(Rom8:16 ESV)</a> </q> 
 		<br><a class='smallnote'>-- William Wei Ding.</a>
 	</blockquote>
 
@@ -28,8 +28,22 @@ var quotestr =`
 		<q reference='The Purpose Driven Life, day24, p190'>The Bible was not given to increase our knowledge but to change our lives.</q> <br><a class='smallnote'>-- D.L. Moody</a>
 	</blockquote>
 
+
 	<blockquote class='centeredtxt'>
+		Jesus said:
+		<cite class="bibleverse">
+		 "I am the vine; you are the branches." 
+		</cite>
+		<a class='smallnote'>(Jhn15:5 NIV)</a>
+		As far as writings, the Bible is the root; our human words are branches.
+		<br><a class='smallnote'>-- William Wei Ding</a>
+	</blockquote>
+
+
+	<blockquote class='centeredtxt'>
+		<cite class="bibleverse">
 		"Your word is a lamp to my feet and a light for my path." 
+		</cite>
 		<a class='smallnote'>(Psm119:105 NIV)</a>
 	</blockquote>
 `
