@@ -12,6 +12,20 @@ config_api_svr.prototype.web_url = function (proctocol, usrname) {
     }
     return url
 }
+
+config_api_svr.prototype.github_host_url = function (proctocol, usrname) {
+    //https://bsnp21.github.io/bb/np/mySignIn.htm?ip=https://34.227.20.213:7775
+    var rest_addr = this.rest_addr(proctocol)
+    var url = `${this.config_websvr_data.github_host_signin_url}?ip=${rest_addr}`
+
+    if (Samples_Guests_Info[usrname]) {
+        Object.entries(Samples_Guests_Info[usrname]).forEach(
+            ([key, value]) => url += `&${key}=${value}`
+        );
+    }
+    return url
+}
+
 config_api_svr.prototype.rest_addr = function (proctocol) {
     var potname = `${proctocol}_port`  //proctocol=http or https 
     var port = this.config_websvr_data[potname]
