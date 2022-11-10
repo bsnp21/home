@@ -1,4 +1,4 @@
-var bsnpRestApi_svc_ipAddr =
+var bsnpHost_IP_info =
 {
     "http": 7778,
     "https": 7775,
