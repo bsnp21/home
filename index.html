@@ -11,7 +11,9 @@
 	<script src="https://wdingbox.github.io/ham12/jq/jquery-2_1_3.min.js"></script>
 	<script src="https://wdingbox.github.io/ham12/utility/htmf/bsnp/BibleStudyNotePad.js?v2021-01">
 	</script>
+	<script xxxxxxxxxxxsrc="https://bsnp21.github.io/home/js/config_websvr_data.js"></script>
 	<script src="./js/config_websvr_data.js"></script>
+	<script src="./js/bsnpHost_IP_info.js"></script>
 	<script src="./js/config_api_svr.js"></script>
 	<script src="./js/quotestr.js"></script>
 	<script src="./js/supportstr.js"></script>
@@ -67,10 +69,10 @@
 
 
 
-	<br>
+
+	<a href="https://bsnp21.github.io/home/">.</a>
 
 
-	<div class="xsmallnote" id="SignInIP"><a href="https://bsnp21.github.io/home/">SignInIP=</a></div>
 
 	<iframe src="https://bsnp21.github.io/tools/oclock/arc_sector/Arclock.html"></iframe>
 	<img src="img/qrcode_bsnp21.github.io.png"></img>
@@ -87,16 +89,16 @@
 	</h1>
 
 	<p style="text-align: center;margin-top: 50px;margin-bottom: 0px;font-size:20px;">
-	<a id="Guest01" href="">
-		Guest Login
-	</a>	
+		<a id="Guest01" href="">
+			Guest Login
+		</a>
 	</p>
 
 	<p style="text-align: center;margin-top: 50px;margin-bottom: 0px;font-size:20px;">
 		<a id="Guest02" href="">
-			 Guest Trial
-		</a>	
-		</p>
+			Guest Trial
+		</a>
+	</p>
 
 
 
@@ -127,7 +129,7 @@
 </html>
 
 <script>
-	
+
 	$(function () {
 
 		cfg_text()
@@ -142,8 +144,8 @@
 		$("#Signinhttp_").attr("href", cfg.web_url("http"))
 		$("#Signinhttps").attr("href", cfg.web_url("https"))
 		$("#GithubSigninhttps").attr("href", cfg.github_host_url("https"))
-		
-		$("#SignInIP").text(`SvrIP= ${config_websvr_data.ip}`)
+
+
 
 		$("#Guest01").attr("href", cfg.web_url("http", "guest01"))
 		$("#Guest02").attr("href", cfg.web_url("http", "guest02"))
