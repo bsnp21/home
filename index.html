@@ -67,7 +67,7 @@
 	<h5 style="text-left: center;margin-top: 0px;"><a class="master_link" id="GithubSigninhttps" xxxhref="https://bsnp21.github.io/bb/np/mySignIn.htm?ip=https://34.227.20.213:7775">(github Host Secure Sign-in)</a>
 	<br></h5>
 
-
+	<div class="xsmallnote" id="SignInIP"><a href="https://bsnp21.github.io/home/">SignInIP=</a></div>
 
 
 	<a href="https://bsnp21.github.io/home/">.</a>
@@ -145,7 +145,8 @@
 		$("#Signinhttps").attr("href", cfg.web_url("https"))
 		$("#GithubSigninhttps").attr("href", cfg.github_host_url("https"))
 
-
+		
+		$("#SignInIP").text(`SvrIP= ${config_websvr_data.ip}`)
 
 		$("#Guest01").attr("href", cfg.web_url("http", "guest01"))
 		$("#Guest02").attr("href", cfg.web_url("http", "guest02"))
