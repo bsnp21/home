@@ -13,11 +13,15 @@
 	</script>
 	<script xxxxxxxxxxxsrc="https://bsnp21.github.io/home/js/config_websvr_data.js"></script>
 	<script src="./js/config_websvr_data.js"></script>
-	<script src="./js/bsnpHost_IP_info.js"></script>
+
 	<script src="./js/config_api_svr.js"></script>
 	<script src="./js/quotestr.js"></script>
 	<script src="./js/supportstr.js"></script>
 	<script src="./js/techfeaturestr.js"></script>
+
+	<script src='https://bsnp21.github.io/home/js/BsnpSvc_IP_Info.js'></script>
+	<script src="./js/BsnpSvc_IP_Info.js"></script>
+	<script src="./js/test_ip_availability.js"></script>
 
 </head>
 
@@ -47,6 +51,9 @@
 		margin-left: auto;
 		margin-right: auto;
 	}
+	.guest{
+		text-align: center;
+	}
 
 	iframe {
 		display: block;
@@ -55,19 +62,56 @@
 		margin-left: auto;
 		margin-right: auto;
 	}
-	.bibleverse{
-		color:red
+
+	.bibleverse {
+		color: red
+	}
+
+	.hili {
+		background-color: red;
 	}
 </style>
 
 <body>
-	<a id="test_https_work" href="" target="_self">Ssl Test</a>
-	<h5 style="text-left: center;margin-top: 0px;"><a class="master_link" id="Signinhttps">(AWS Host Secure Sign-in)</a><br></h5>
+	<table id="test_ip_availability" note="frame for gen_avai_sel">
+		<tr>
+			<td>
+				<table border="1">
+					<caption id="host_cap">Host Signin<br>
+						<button class="protocal hili">http</button>
+						<button class="protocal">https</button>
+					</caption>
+					<tbody id="hostaddr"></tbody>
+				</table>
+			</td>
 
-	<h5 style="text-left: center;margin-top: 0px;"><a class="master_link" id="GithubSigninhttps" xxxhref="https://bsnp21.github.io/bb/np/mySignIn.htm?ip=https://34.227.20.213:7775">(github Host Secure Sign-in)</a>
-	<br></h5>
+			<td>
+				<table border="1">
+					<caption id="svr_cap"> <a>Svc IP param</a><br>
+						<button class="protocal hili">http</button>
+						<button class="protocal">https</button>
+					</caption>
+					<tbody id="svcaddr"></tbody>
+				</table>
 
-	<div class="xsmallnote" id="SignInIP"><a href="https://bsnp21.github.io/home/">SignInIP=</a></div>
+			</td>
+			<td>
+				<table border="1">
+					<caption></caption>
+					<tbody id="sam"></tbody>
+				</table>
+			</td>
+		</tr>
+
+		<tr>
+			<td colspan="3">
+				<a id="linkstr"></a>
+
+			</td>
+		</tr>
+	</table>
+
+	<div class="xsmallnote" id="SignInIP"><a xhref="https://bsnp21.github.io/home/">SignInIP=</a></div>
 
 
 	<a href="https://bsnp21.github.io/home/">.</a>
@@ -81,20 +125,20 @@
 
 
 
-	<p style="text-align: center;margin-top: 50px;margin-bottom: 0px;font-size:40px;">
-		Bible Study Note Pad</p>
+	<h1 style="text-align: center;margin-top: 50px;margin-bottom: 0px;font-size:40px;">
+		Bible Study Note Pad</h1>
 	<h1 style="text-align: center;margin-top: 50px;margin-bottom: 0px;">
-		<a class='master_link' id="Signinhttp_" href="http:///wdaws/ham12/utility/htmf/bsnp/mySignIn.htm?ip=:7778">
+		<a class='master_link' id="User_Signin" href="http:///wdaws/ham12/utility/htmf/bsnp/mySignIn.htm?ip=:7778">
 			User Sign-in</a>
 	</h1>
 
-	<p style="text-align: center;margin-top: 50px;margin-bottom: 0px;font-size:20px;">
+	<p class="guest">
 		<a id="Guest01" href="">
-			Guest Login
+			Guest Sign-in
 		</a>
 	</p>
 
-	<p style="text-align: center;margin-top: 50px;margin-bottom: 0px;font-size:20px;">
+	<p  class="guest">
 		<a id="Guest02" href="">
 			Guest Trial
 		</a>
@@ -137,27 +181,25 @@
 		htm_context()
 	})
 
-	function cfg_text(){
-		var cfg = new config_api_svr(config_websvr_data)
+	function cfg_text() {
+		var tester = new gen_test_ip_availability()
 
-		$("#test_https_work").attr("href", cfg.test_https_work())
-		$("#Signinhttp_").attr("href", cfg.web_url("http"))
-		$("#Signinhttps").attr("href", cfg.web_url("https"))
-		$("#GithubSigninhttps").attr("href", cfg.github_host_url("https"))
+		$("#test_ip_availability").hide()
+		$("#SignInIP").on("click", function () {
+			$("#test_ip_availability").fadeToggle("slow")
+		})
 
-		
-		$("#SignInIP").text(`SvrIP= ${config_websvr_data.ip}`)
-
-		$("#Guest01").attr("href", cfg.web_url("http", "guest01"))
-		$("#Guest02").attr("href", cfg.web_url("http", "guest02"))
+		setTimeout(() => {
+			$("#User_Signin").attr("href", tester.gen_linker())
+			$("#Guest01").attr("href", tester.gen_linker() + tester.get_parm_guest_(1))
+			$("#Guest02").attr("href", tester.gen_linker() + tester.get_parm_guest_(2))
+		}, 100)
 
 
 		var url = "" + document.location.href
 		if (url.indexOf(".github.io/") >= 0) {
 			$("#test").text("")
 		}
-
-
 
 	}
 
