@@ -10,7 +10,7 @@ function gen_test_ip_availability() {
         var protocal = $("#host_cap .protocal.hili").text()
         var port = BsnpSvc_IP_Info.Ports.host
         var Hostary = ["", "https://bsnp21.github.io/bb/np/mySignIn.htm"];
-        Object.keys(BsnpSvc_IP_Info.ip).forEach(function (ip) {
+        Object.keys(BsnpSvc_IP_Info.IP).forEach(function (ip) {
             Hostary.push(`${protocal}://${ip}:${port[protocal]}/wdaws/bb/np/mySignIn.htm`)
         })
         console.log(Hostary)
@@ -29,7 +29,7 @@ function gen_test_ip_availability() {
     function gen_svc() {
         var protocal = $("#svr_cap .protocal.hili").text().trim()
         var str = "<tr><td>-</td></tr><tr><td>-</td></tr>"
-        Object.keys(BsnpSvc_IP_Info.ip).forEach(function (ip, i) {
+        Object.keys(BsnpSvc_IP_Info.IP).forEach(function (ip, i) {
             var url = `${protocal}://${ip}:${BsnpSvc_IP_Info.Ports.bsnpa[protocal]}`
             var portc = BsnpSvc_IP_Info.Ports.bsnpc[protocal]
             var url_c = `${protocal}://${ip}:${portc}`
