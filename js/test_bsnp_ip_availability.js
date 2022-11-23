@@ -9,7 +9,7 @@ function gen_test_ip_availability() {
         // svr port https or http. 
         var protocal = $("#host_cap .protocal.hili").text()
         var port = BsnpSvc_IP_Info.Ports.host
-        var Hostary = ["", "https://bsnp21.github.io/bb/np/mySignIn.htm"];
+        var Hostary = ["","../np/mySignIn.htm", "https://bsnp21.github.io/bb/np/mySignIn.htm"];
         Object.keys(BsnpSvc_IP_Info.IP).forEach(function (ip) {
             Hostary.push(`${protocal}://${ip}:${port[protocal]}/wdaws/bb/np/mySignIn.htm`)
         })
