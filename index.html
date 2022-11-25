@@ -17,7 +17,7 @@
 	
 	<script src="./js/quotestr.js"></script>
 	<script src="./js/supportstr.js"></script>
-	<script src="./js/techfeaturestr.js"></script>
+	<script src="./js/techfeaturestr.htm.js"></script>
 
 	<script src='https://bsnp21.github.io/home/js/BsnpSvc_IP_Info.js'></script>
 	<script src="./js/BsnpSvc_IP_Info.js"></script>
@@ -73,7 +73,7 @@
 </style>
 
 <body>
-	<div class="xsmallnote" id="SignInIP"><a xhref="https://bsnp21.github.io/home/">SignInIP=</a></div>
+	<div class="xsmallnote" id="SignInIP">SignInIP=<a id="SignInIPaddress"></a></div>
 
 	<table id="test_ip_availability" note="frame for gen_avai_sel">
 		<tr>
@@ -129,7 +129,7 @@
 	<h1 style="text-align: center;margin-top: 50px;margin-bottom: 0px;font-size:40px;">
 		Bible Study Note Pad</h1>
 	<h1 style="text-align: center;margin-top: 50px;margin-bottom: 0px;">
-		<a class='master_link' id="User_Signin" href="http:///wdaws/ham12/utility/htmf/bsnp/mySignIn.htm?ip=:7778">
+		<a class='master_link' id="User_Signin" href="http:///wdaws/ham12/utility/htmf/bsnp/mySignIn.htm?sip=:7778">
 			User Sign-in</a>
 	</h1>
 
@@ -191,6 +191,7 @@
 		})
 
 		setTimeout(() => {
+			$("#SignInIPaddress").text(Object.keys(BsnpSvc_IP_Info.IP)[0])
 			$("#User_Signin").attr("href", tester.gen_linker())
 			$("#Guest01").attr("href", tester.gen_linker() + tester.get_parm_guest_(1))
 			$("#Guest02").attr("href", tester.gen_linker() + tester.get_parm_guest_(2))

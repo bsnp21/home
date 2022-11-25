@@ -2,8 +2,8 @@ function gen_test_ip_availability() {
     var _THIS = this
 
     function gen_host() {
-        // href="http://34.227.20.213/wdaws/bb/np/mySignIn.htm?ip=http://34.227.20.213:7778"
-        ///href="http://34.227.20.213/wdaws/bb/np/mySignIn.htm?ip=http://34.227.20.213:7778&rep=https://wdingsoft@bitbucket.org/bsnp21/guest_01.git&pat=&opt="
+        // href="http://34.227.20.213/wdaws/bb/np/mySignIn.htm?sip=http://34.227.20.213:7778"
+        ///href="http://34.227.20.213/wdaws/bb/np/mySignIn.htm?sip=http://34.227.20.213:7778&rep=https://wdingsoft@bitbucket.org/bsnp21/guest_01.git&pat=&opt="
         // hostipaddress list.
         // svr ip list (including githut.io)
         // svr port https or http. 
@@ -33,7 +33,7 @@ function gen_test_ip_availability() {
             var url = `${protocal}://${ip}:${BsnpSvc_IP_Info.Ports.bsnpa[protocal]}`
             var portc = BsnpSvc_IP_Info.Ports.bsnpc[protocal]
             var url_c = `${protocal}://${ip}:${portc}`
-            var par = `?ip=${url}`
+            var par = `?sip=${url}`
             var shili = (0 === i) ? " hili" : ""
             str += `<tr><td class='svc${shili}' ip='${ip}'>${par}</td><td><a href='${url}'>/</a></td><td><a href='${url}/get_OTK'>get_OTK</a></td><td><a href='${url_c}'>${portc}</a></td></tr>`
         })
