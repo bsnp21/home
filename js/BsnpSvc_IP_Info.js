@@ -21,10 +21,6 @@ var BsnpSvc_IP_Info =
     Ports: Default_Ports,
     IP:
     {
-        "3.84.149.139":{
-            ports: Default_Ports,
-            desc: "wd0"
-        },
         "34.227.20.213": {
             ports: Default_Ports,
             desc: "default."
@@ -36,6 +32,10 @@ var BsnpSvc_IP_Info =
         "54.152.238.18": {
             ports: Default_Ports,
             desc: "wd08"
+        },
+        "3.84.149.139":{
+            ports: Default_Ports,
+            desc: "wd0"
         }
     }
 
