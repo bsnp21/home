@@ -98,10 +98,7 @@
 
 			</td>
 			<td>
-				<table border="1">
-					<caption></caption>
-					<tbody id="sam"></tbody>
-				</table>
+				
 			</td>
 		</tr>
 
@@ -133,15 +130,11 @@
 			User Sign-in</a>
 	</h1>
 
-	<p class="guest">
-		<a id="Guest01" href="">
-			Guest Sign-in
-		</a>
-	</p>
+
 
 	<p  class="guest">
 		<a id="Guest02" href="">
-			Guest Trial
+			Guest Enter<br>(automatically Sign-in)</a>
 		</a>
 	</p>
 
@@ -177,12 +170,12 @@
 
 	$(function () {
 
-		cfg_text()
+		svc_ip_cfg_face_links()
 
-		htm_context()
+		foot_notes()
 	})
 
-	function cfg_text() {
+	function svc_ip_cfg_face_links() {
 		var tester = new gen_test_ip_availability()
 
 		$("#test_ip_availability").hide()
@@ -193,8 +186,8 @@
 		setTimeout(() => {
 			$("#SignInIPaddress").text(Object.keys(BsnpSvc_IP_Info.IP)[0])
 			$("#User_Signin").attr("href", tester.gen_linker())
-			$("#Guest01").attr("href", tester.gen_linker() + tester.get_parm_guest_(1))
-			$("#Guest02").attr("href", tester.gen_linker() + tester.get_parm_guest_(2))
+			
+			$("#Guest02").attr("href", tester.gen_linker() + tester.guest_auto_login())
 		}, 100)
 
 
@@ -205,7 +198,7 @@
 
 	}
 
-	function htm_context() {
+	function foot_notes() {
 
 		function notes_spec_table() {
 			var trs = "", i = 1

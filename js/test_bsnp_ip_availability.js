@@ -47,24 +47,12 @@ function gen_test_ip_availability() {
     }
 
 
-    function gen_sam_usr() {
-        var str = "<tr><td>0</td><td class='sam hili'></td></tr>"
-        for (var i = 1; i <= 2; i++) {
-            var par = _THIS.get_parm_guest_(i)
-            str += `<tr><td>${i}</td><td class='sam'>${par}</td></tr>`
-        }
-        $("#sam").html(str)
-        $(".sam").on("click", function () {
-            $(".sam.hili").removeClass("hili")
-            $(this).addClass("hili")
-            _THIS.gen_linker()
-        })
-    }
+   
 
     $(function () {
         gen_host()
         gen_svc()
-        gen_sam_usr()
+        
         $("#svr_cap .protocal").on("click", function () {
             $("#svr_cap .protocal.hili").removeClass("hili")
             $(this).addClass("hili")
@@ -82,18 +70,18 @@ function gen_test_ip_availability() {
         _THIS.gen_linker()
     })
 }
-gen_test_ip_availability.prototype.get_parm_guest_ = function (i) {
-    var pwd = ["gSzk", "TPg", "FNnz9v", "5wGF", "5eN"]
-    var par = `&rep=https://wdingsoft@bitbucket.org/bsnp21/guest_0${i}.git&pat=${pwd.join("")}`
+gen_test_ip_availability.prototype.guest_auto_login = function () {
+   
+    var par = `&guest_auto_login=1`
     return par
 }
 gen_test_ip_availability.prototype.gen_linker = function (i) {
     var str = $(".host.hili").text()
     str += $(".svc.hili").text()
-    sam = $(".sam.hili").text()
-    $("#linkstr").text(str + sam)
-    $("#linkstr").attr("href", str + sam)
-    console.log("linker=",str+sam)
+    
+    $("#linkstr").text(str )
+    $("#linkstr").attr("href", str )
+    console.log("linker=",str)
     return str
 }
 $(function () {
