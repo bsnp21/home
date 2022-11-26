@@ -16,8 +16,8 @@ function gen_test_ip_availability() {
         console.log(Hostary)
         var str = ""
         Hostary.forEach(function (key, i) {
-            var shili = (2 === i) ? " hili" : ""
-            str += `<tr><td>${i}</td><td class='host${shili}'>${key}</td></tr>`
+            var default_hili = (3 === i) ? " hili" : ""
+            str += `<tr><td>${i}</td><td class='host${default_hili}'>${key}</td></tr>`
         })
         $("#hostaddr").html(str)
         $(".host").on("click", function () {
@@ -34,8 +34,8 @@ function gen_test_ip_availability() {
             var portc = BsnpSvc_IP_Info.Ports.bsnpc[protocal]
             var url_c = `${protocal}://${ip}:${portc}`
             var par = `?sip=${url}`
-            var shili = (0 === i) ? " hili" : ""
-            str += `<tr><td class='svc${shili}' ip='${ip}'>${par}</td><td><a href='${url}'>/</a></td><td><a href='${url}/get_OTK'>get_OTK</a></td><td><a href='${url_c}'>${portc}</a></td></tr>`
+            var default_hili = (0 === i) ? " hili" : ""
+            str += `<tr><td class='svc${default_hili}' ip='${ip}'>${par}</td><td><a href='${url}'>/</a></td><td><a href='${url}/get_OTK'>get_OTK</a></td><td><a href='${url_c}'>${portc}</a></td></tr>`
         })
         $("#svcaddr").html(str)
         $(".svc").on("click", function () {
