@@ -7,9 +7,7 @@ var supportstr =`
     <li>
     <b>join</b> our tech team to improve the codes to serve for HIM,
     </li>
-    <li>
-    <b>donate</b> financially to maintain the service as for a missionary.
-    </li>
+    
 
 
     </ol>
