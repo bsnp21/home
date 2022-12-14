@@ -126,14 +126,14 @@
 	<h1 style="text-align: center;margin-top: 50px;margin-bottom: 0px;font-size:40px;">
 		Bible Study Note Plus</h1>
 	<h1 style="text-align: center;margin-top: 50px;margin-bottom: 0px;">
-		<a class='master_link' id="User_Signin" href="http:///wdaws/ham12/utility/htmf/bsnp/mySignIn.htm?sip=:7778">
+		<a class='master_link' id="Users_Signin" href="http:///wdaws/ham12/utility/htmf/bsnp/mySignIn.htm?sip=:7778">
 			User Sign-in</a>
 	</h1>
 
 
 
 	<p  class="guest">
-		<a id="Guest02" href="">
+		<a id="Guest_Signin" href="">
 			Guest Enter<br>(Auto Sign-in)</a>
 		</a>
 	</p>
@@ -193,9 +193,10 @@
 
 		setTimeout(() => {
 			$("#SignInIPaddress").text(Object.keys(BsnpSvc_IP_Info.IP)[0])
-			$("#User_Signin").attr("href", tester.gen_linker())
-			
-			$("#Guest02").attr("href", tester.gen_linker() + tester.guest_auto_login())
+
+
+			$("#Users_Signin").attr("href", localStorage.getItem("users_signin_page_url"))
+			$("#Guest_Signin").attr("href", localStorage.getItem("guest_signin_page_url"))
 		}, 100)
 
 
