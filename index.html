@@ -73,7 +73,7 @@
 </style>
 
 <body>
-	<div class="xsmallnote" id="SignInIP">SignInIP=<a id="SignInIPaddress"></a></div>
+	<div class="xsmallnote" id="DefaultSignInIP">DefaultSignInIP=<a id="SignInIPaddress"></a></div>
 
 	<table id="test_ip_availability" note="frame for gen_avai_sel">
 		<tr>
@@ -125,15 +125,14 @@
 
 	<h1 style="text-align: center;margin-top: 50px;margin-bottom: 0px;font-size:40px;">
 		Bible Study Note Plus</h1>
+		
 	<h1 style="text-align: center;margin-top: 50px;margin-bottom: 0px;">
-		<a class='master_link' id="Users_Signin" href="http:///wdaws/ham12/utility/htmf/bsnp/mySignIn.htm?sip=:7778">
+		<a class='main_link' id="Users_Signin" href="http:///wdaws/ham12/utility/htmf/bsnp/mySignIn.htm?sip=:7778">
 			User Sign-in</a>
 	</h1>
 
-
-
 	<p  class="guest">
-		<a id="Guest_Signin" href="">
+		<a class='main_link' id="Guest_Signin" href="">
 			Guest Enter<br>(Auto Sign-in)</a>
 		</a>
 	</p>
@@ -187,17 +186,20 @@
 		var tester = new gen_test_ip_availability()
 
 		$("#test_ip_availability").hide()
-		$("#SignInIP").on("click", function () {
+		$("#DefaultSignInIP").on("click", function () {
 			$("#test_ip_availability").fadeToggle("slow")
 		})
 
-		setTimeout(() => {
-			$("#SignInIPaddress").text(Object.keys(BsnpSvc_IP_Info.IP)[0])
 
-
-			$("#Users_Signin").attr("href", localStorage.getItem("users_signin_page_url"))
-			$("#Guest_Signin").attr("href", localStorage.getItem("guest_signin_page_url"))
-		}, 100)
+		$("#Users_Signin").on("click",function(){
+			$(this).attr("href", localStorage.getItem("users_signin_page_url"))
+		})
+		$("#Guest_Signin").on("click",function(){
+			$(this).attr("href", localStorage.getItem("guest_signin_page_url"))
+		})
+	
+		$("#SignInIPaddress").text(Object.keys(BsnpSvc_IP_Info.IP)[0])
+	
 
 
 		var url = "" + document.location.href
