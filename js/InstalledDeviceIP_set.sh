@@ -19,7 +19,7 @@ function Generate_IP_Config_File(){
     fi
 
 FileName="InstalledDeviceIP.js"
-echo "var InstalledDeviceIP = '$1'" > ${FileName}
+echo " InstalledDeviceIP = '$1'" > ${FileName}
 git add *
 git commit -m "'$1'"
 git push
