@@ -195,11 +195,8 @@
 			$("#test_ip_availability").fadeToggle("slow")
 		})
 
-
-		$("#Users_Signin").on("click",function(){
-			var url=`http://${config_websvr_data.ip}/wdaws/bb/np/mySignIn.htm?sip=http://${config_websvr_data.ip}:7778`
-			$(this).attr("href", url)
-		})
+		$("#Users_Signin").attr("href", config_websvr_data.mySignIn_url);
+		
 		$("#Guest_Signin").on("click",function(){
 			$(this).attr("href", localStorage.getItem("guest_signin_page_url"))
 		})
