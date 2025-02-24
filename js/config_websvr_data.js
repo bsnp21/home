@@ -6,7 +6,9 @@ var config_websvr_data = {
 
 
 
-config_websvr_data.mySignIn_url = `http://${config_websvr_data.ip}/wdaws/bb/np/mySignIn.htm?sip=http://${config_websvr_data.ip}:7778`
+config_websvr_data.mySignIn_url = function () {
+    return `http://${config_websvr_data.ip}/wdaws/bb/np/mySignIn.htm?sip=http://${config_websvr_data.ip}:7778`
+}
 
 
 

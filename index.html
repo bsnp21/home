@@ -77,7 +77,7 @@
 </style>
 
 <body>
-	<div class="xsmallnote" id="DefaultSignInIP">DefaultSignInIP=<a id="SignInIPaddress"></a></div>
+	<div class="xsmallnote" id="DefaultSignInIP">DefaultSignInIP= <a id="SignInIPaddress" contenteditable="true"></a></div>
 
 	<table id="test_ip_availability" note="frame for gen_avai_sel">
 		<tr>
@@ -192,10 +192,12 @@
 
 		$("#test_ip_availability").hide()
 		$("#DefaultSignInIP").on("click", function () {
-			$("#test_ip_availability").fadeToggle("slow")
+			//$("#test_ip_availability").fadeToggle("slow")
+			config_websvr_data.ip = $("#SignInIPaddress").text()
+			$("#Users_Signin").attr("href", config_websvr_data.mySignIn_url());
 		})
 
-		$("#Users_Signin").attr("href", config_websvr_data.mySignIn_url);
+		$("#Users_Signin").attr("href", config_websvr_data.mySignIn_url());
 		
 		$("#Guest_Signin").on("click",function(){
 			$(this).attr("href", localStorage.getItem("guest_signin_page_url"))
@@ -208,7 +210,6 @@
 		var url = "" + document.location.href
 		if (url.indexOf(".github.io/") >= 0) {
 			$("#test").text("")
-		}
 
 	}
 
