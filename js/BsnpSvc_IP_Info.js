@@ -21,7 +21,7 @@ var BsnpSvc_IP_Info =
     Ports: Default_Ports,
     IP:
     {
-        "34.227.20.213": {
+        "34.224.88.91": {
             ports: Default_Ports,
             desc: "default."
         },
