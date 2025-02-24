@@ -15,13 +15,13 @@
 	<script xxxxxsrc="https://bsnp21.github.io/home/js/config_websvr_data.js"></script>
 	<script src="./js/config_websvr_data.js"></script>
 
- 
-	
+
+
 	<script src="./js/quotestr.js"></script>
 	<script src="./js/supportstr.js"></script>
 	<script src="./js/techfeaturestr.htm.js"></script>
 
-	
+
 	<script xxxxsrc="./js/test_bsnp_ip_availability.js?v=1"></script>
 
 </head>
@@ -47,12 +47,14 @@
 		background-color: lightgray;
 	}
 
-	img, .centr {
+	img,
+	.centr {
 		display: block;
 		margin-left: auto;
 		margin-right: auto;
 	}
-	.guest{
+
+	.guest {
 		text-align: center;
 	}
 
@@ -74,17 +76,18 @@
 </style>
 
 <body>
-	<div class="xsmallnote" id="DefaultSignInIP">DefaultSignInIP= <a id="SignInIPaddress" style="background-color: yellow;" contenteditable="true"></a></div>
+	<div class="xsmallnote" id="DefaultSignInIP">Test SignInIP=
+		<a id="SignInIPaddress" style="background-color: yellow;" contenteditable="true"></a>
 
- 
-	<a id="test_other_ip" href="https://bsnp21.github.io/home/">test_Signin_ip</a><br>
-	<a id="test_ip_api" href="https://bsnp21.github.io/home/">test_api</a><br>
+		<a id="test_ip_api" href="https://bsnp21.github.io/home/"></a><br>
+		<a id="test_other_ip" href="https://bsnp21.github.io/home/"></a><br>
 
-	<a href="https://bsnp21.github.io/home/">.</a>
+		<a href="https://bsnp21.github.io/home/">.</a>
+
+	</div>
 
 
 
-	
 	<img src="img/qrcode_bsnp21.github.io.png"></img>
 
 
@@ -93,13 +96,13 @@
 
 	<h1 style="text-align: center;margin-top: 50px;margin-bottom: 0px;font-size:40px;">
 		Bible Study Note Plus</h1>
-		
+
 	<h1 style="text-align: center;margin-top: 50px;margin-bottom: 0px;">
 		<a class='main_link' id="Users_Signin" href="http:///wdaws/home/mySignIn.htm?sip=${InstalledDeviceIP}:7778">
 			User Sign-in</a>
 	</h1>
 
-	<p  class="guest">
+	<p class="guest">
 		<a class='main_link' id="Guest_Signin" href="">
 			Guest Enter<br>(Auto Sign-in)</a>
 		</a>
@@ -117,7 +120,7 @@
 	<div id="QuotesContainer"></div>
 
 
-	
+
 	<hr />
 
 	<div style="text-align: center;margin-top: 50px;">Ancient Jews and Chinese Oracle Clock</div>
@@ -133,7 +136,7 @@
 	</div>
 
 
-	
+
 	<div class="footnoteshow" id="supportstr" style="display: none;">..</div>
 	<div class="footnoteshow" id="techfeaturestr" style="display: none;">..</div>
 	<br><br><br>
@@ -152,9 +155,9 @@
 
 	function svc_ip_cfg_face_links() {
 
-	 
+
+		$("#SignInIPaddress").text(config_websvr_data.ip)
 		$("#DefaultSignInIP").on("click", function () {
-			//$("#test_ip_availability").fadeToggle("slow")
 			config_websvr_data.ip = $("#SignInIPaddress").text()
 			$("#test_other_ip").attr("href", config_websvr_data.mySignIn_url());
 			$("#test_other_ip").text(config_websvr_data.mySignIn_url())
@@ -162,14 +165,16 @@
 			$("#test_ip_api").text(config_websvr_data.svr_api_url())
 		})
 
+
+
 		$("#Users_Signin").attr("href", config_websvr_data.mySignIn_url());
-		
-		$("#Guest_Signin").on("click",function(){
-			$(this).attr("href", config_websvr_data.guest_url());//localStorage.getItem("guest_signin_page_url"))
+
+		$("#Guest_Signin").on("click", function () {
+			$(this).attr("href", config_websvr_data.guest_url());//
 		})
-	
-		$("#SignInIPaddress").text(config_websvr_data.ip)
-	
+
+		
+
 
 
 		var url = "" + document.location.href
