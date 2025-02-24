@@ -12,20 +12,17 @@
 	<script src="https://wdingbox.github.io/ham12/utility/htmf/bsnp/BibleStudyNotePad.js?v2021-01">
 	</script>
 
-	<script xxxxxxxxxxxsrc="https://bsnp21.github.io/home/js/config_websvr_data.js"></script>
+	<script xxxxxsrc="https://bsnp21.github.io/home/js/config_websvr_data.js"></script>
 	<script src="./js/config_websvr_data.js"></script>
 
-	<script xxxxxxxxxxxsrc='https://bsnp21.github.io/home/js/BsnpSvc_IP_Info.js'></script>
-	<script xxxxxxsrc="./js/BsnpSvc_IP_Info.js"></script>
-	<script xxxxxxsrc="./js/InstalledDeviceIP.js"></script>
-
+ 
 	
 	<script src="./js/quotestr.js"></script>
 	<script src="./js/supportstr.js"></script>
 	<script src="./js/techfeaturestr.htm.js"></script>
 
 	
-	<script src="./js/test_bsnp_ip_availability.js?v=1"></script>
+	<script xxxxsrc="./js/test_bsnp_ip_availability.js?v=1"></script>
 
 </head>
 
@@ -77,44 +74,11 @@
 </style>
 
 <body>
-	<div class="xsmallnote" id="DefaultSignInIP">DefaultSignInIP= <a id="SignInIPaddress" contenteditable="true"></a></div>
+	<div class="xsmallnote" id="DefaultSignInIP">DefaultSignInIP= <a id="SignInIPaddress" style="background-color: yellow;" contenteditable="true"></a></div>
 
-	<table id="test_ip_availability" note="frame for gen_avai_sel">
-		<tr>
-			<td>
-				<table border="1">
-					<caption id="host_cap">Host Signin<br>
-						<button class="protocal hili">http</button>
-						<button class="protocal">https</button>
-					</caption>
-					<tbody id="hostaddr"></tbody>
-				</table>
-			</td>
-
-			<td>
-				<table border="1">
-					<caption id="svr_cap"> <a>Svc IP param</a><br>
-						<button class="protocal hili">http</button>
-						<button class="protocal">https</button>
-					</caption>
-					<tbody id="svcaddr"></tbody>
-				</table>
-
-			</td>
-			<td>
-				
-			</td>
-		</tr>
-
-		<tr>
-			<td colspan="3">
-				<a id="linkstr"></a>
-
-			</td>
-		</tr>
-	</table>
-
-	
+ 
+	<a id="test_other_ip" href="https://bsnp21.github.io/home/">test_Signin_ip</a><br>
+	<a id="test_ip_api" href="https://bsnp21.github.io/home/">test_api</a><br>
 
 	<a href="https://bsnp21.github.io/home/">.</a>
 
@@ -187,20 +151,21 @@
 	})
 
 	function svc_ip_cfg_face_links() {
-		//var tester = new gen_test_ip_availability()
 
-
-		$("#test_ip_availability").hide()
+	 
 		$("#DefaultSignInIP").on("click", function () {
 			//$("#test_ip_availability").fadeToggle("slow")
 			config_websvr_data.ip = $("#SignInIPaddress").text()
-			$("#Users_Signin").attr("href", config_websvr_data.mySignIn_url());
+			$("#test_other_ip").attr("href", config_websvr_data.mySignIn_url());
+			$("#test_other_ip").text(config_websvr_data.mySignIn_url())
+			$("#test_ip_api").attr("href", config_websvr_data.svr_api_url());
+			$("#test_ip_api").text(config_websvr_data.svr_api_url())
 		})
 
 		$("#Users_Signin").attr("href", config_websvr_data.mySignIn_url());
 		
 		$("#Guest_Signin").on("click",function(){
-			$(this).attr("href", localStorage.getItem("guest_signin_page_url"))
+			$(this).attr("href", config_websvr_data.guest_url());//localStorage.getItem("guest_signin_page_url"))
 		})
 	
 		$("#SignInIPaddress").text(config_websvr_data.ip)

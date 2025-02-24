@@ -3,8 +3,16 @@ var config_websvr_data = {
     http_port: "7778",
     https_port: "7775",
 
+    //////////////////////
+    //
+    svr_api_url: function () {
+        return `http://${config_websvr_data.ip}:${config_websvr_data.http_port}`
+    },
     mySignIn_url: function () {
-        return `http://${config_websvr_data.ip}/wdaws/bb/np/mySignIn.htm?sip=http://${config_websvr_data.ip}:7778`
+        return `http://${config_websvr_data.ip}/wdaws/bb/np/mySignIn.htm?sip=${config_websvr_data.svr_api_url()}`
+    },
+    guest_url: function () {
+        return config_websvr_data.mySignIn_url() + "&guest_auto_login=1"
     }
 
 }
