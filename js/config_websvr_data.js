@@ -2,13 +2,17 @@ var config_websvr_data = {
     ip: "34.224.88.91",
     http_port: "7778",
     https_port: "7775",
+
+    mySignIn_url: function () {
+        return `http://${config_websvr_data.ip}/wdaws/bb/np/mySignIn.htm?sip=http://${config_websvr_data.ip}:7778`
+    }
+
 }
 
 
 
-config_websvr_data.mySignIn_url = function () {
-    return `http://${config_websvr_data.ip}/wdaws/bb/np/mySignIn.htm?sip=http://${config_websvr_data.ip}:7778`
-}
+//config_websvr_data.mySignIn_url = `http://${config_websvr_data.ip}/wdaws/bb/np/mySignIn.htm?sip=http://${config_websvr_data.ip}:7778`
+
 
 
 
