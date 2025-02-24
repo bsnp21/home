@@ -11,16 +11,20 @@
 	<script src="https://wdingbox.github.io/ham12/jq/jquery-2_1_3.min.js"></script>
 	<script src="https://wdingbox.github.io/ham12/utility/htmf/bsnp/BibleStudyNotePad.js?v2021-01">
 	</script>
+
 	<script xxxxxxxxxxxsrc="https://bsnp21.github.io/home/js/config_websvr_data.js"></script>
 	<script src="./js/config_websvr_data.js"></script>
+
+	<script xxxxxxxxxxxsrc='https://bsnp21.github.io/home/js/BsnpSvc_IP_Info.js'></script>
+	<script src="./js/BsnpSvc_IP_Info.js"></script>
+	<script src="./js/InstalledDeviceIP.js"></script>
 
 	
 	<script src="./js/quotestr.js"></script>
 	<script src="./js/supportstr.js"></script>
 	<script src="./js/techfeaturestr.htm.js"></script>
 
-	<script src='https://bsnp21.github.io/home/js/BsnpSvc_IP_Info.js'></script>
-	<script src="./js/BsnpSvc_IP_Info.js"></script>
+	
 	<script src="./js/test_bsnp_ip_availability.js?v=1"></script>
 
 </head>
@@ -127,7 +131,7 @@
 		Bible Study Note Plus</h1>
 		
 	<h1 style="text-align: center;margin-top: 50px;margin-bottom: 0px;">
-		<a class='main_link' id="Users_Signin" href="http:///wdaws/ham12/utility/htmf/bsnp/mySignIn.htm?sip=:7778">
+		<a class='main_link' id="Users_Signin" href="http:///wdaws/home/mySignIn.htm?sip=${InstalledDeviceIP}:7778">
 			User Sign-in</a>
 	</h1>
 
@@ -192,13 +196,14 @@
 
 
 		$("#Users_Signin").on("click",function(){
-			$(this).attr("href", localStorage.getItem("users_signin_page_url"))
+			var url=`http://${InstalledDeviceIP}/wdaws/bb/np/mySignIn.htm?sip=http://${InstalledDeviceIP}:7778`
+			$(this).attr("href", url)
 		})
 		$("#Guest_Signin").on("click",function(){
 			$(this).attr("href", localStorage.getItem("guest_signin_page_url"))
 		})
 	
-		$("#SignInIPaddress").text(Object.keys(BsnpSvc_IP_Info.IP)[0])
+		$("#SignInIPaddress").text(InstalledDeviceIP)
 	
 
 
