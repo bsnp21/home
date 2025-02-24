@@ -16,8 +16,8 @@
 	<script src="./js/config_websvr_data.js"></script>
 
 	<script xxxxxxxxxxxsrc='https://bsnp21.github.io/home/js/BsnpSvc_IP_Info.js'></script>
-	<script src="./js/BsnpSvc_IP_Info.js"></script>
-	<script src="./js/InstalledDeviceIP.js"></script>
+	<script xxxxxxsrc="./js/BsnpSvc_IP_Info.js"></script>
+	<script xxxxxxsrc="./js/InstalledDeviceIP.js"></script>
 
 	
 	<script src="./js/quotestr.js"></script>
@@ -189,6 +189,7 @@
 	function svc_ip_cfg_face_links() {
 		var tester = new gen_test_ip_availability()
 
+
 		$("#test_ip_availability").hide()
 		$("#DefaultSignInIP").on("click", function () {
 			$("#test_ip_availability").fadeToggle("slow")
@@ -196,14 +197,14 @@
 
 
 		$("#Users_Signin").on("click",function(){
-			var url=`http://${InstalledDeviceIP}/wdaws/bb/np/mySignIn.htm?sip=http://${InstalledDeviceIP}:7778`
+			var url=`http://${config_websvr_data.ip}/wdaws/bb/np/mySignIn.htm?sip=http://${config_websvr_data.ip}:7778`
 			$(this).attr("href", url)
 		})
 		$("#Guest_Signin").on("click",function(){
 			$(this).attr("href", localStorage.getItem("guest_signin_page_url"))
 		})
 	
-		$("#SignInIPaddress").text(InstalledDeviceIP)
+		$("#SignInIPaddress").text(config_websvr_data.ip)
 	
 
 
