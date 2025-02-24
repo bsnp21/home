@@ -1,1 +1,1 @@
-var InstalledDeviceIP = '1.1.1.1'
+var InstalledDeviceIP = 'http://34.224.88.91/'
