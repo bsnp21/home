@@ -5,14 +5,14 @@ var config_websvr_data = {
 
     //////////////////////
     //
-    svr_api_url: function () {
-        return `http://${config_websvr_data.ip}:${config_websvr_data.http_port}`
+    svr_api_url: function (sip) {
+        return `http://${sip ? sip : config_websvr_data.ip}:${config_websvr_data.http_port}`
     },
-    mySignIn_url: function () {
-        return `http://${config_websvr_data.ip}/wdaws/bb/np/mySignIn.htm?sip=${config_websvr_data.svr_api_url()}`
+    mySignIn_url: function (sip) {
+        return `http://${sip ? sip : config_websvr_data.ip}/wdaws/bb/np/mySignIn.htm?sip=${config_websvr_data.svr_api_url()}`
     },
-    guest_url: function () {
-        return config_websvr_data.mySignIn_url() + "&guest_auto_login=1"
+    guest_url: function (sip) {
+        return config_websvr_data.mySignIn_url(sip) + "&guest_auto_login=1"
     }
 
 }
