@@ -75,15 +75,10 @@
 </style>
 <script>
 	$(function () {
-
 		svc_ip_cfg_face_links()
-
-		//foot_notes()
 	})
 
 	function svc_ip_cfg_face_links() {
-
-
 		$("#SignInIPaddress").text(config_websvr_data.ip)
 		$("#SignInIPaddress").on("keyup click", function () {
 			var tmpip = $("#SignInIPaddress").text()
@@ -98,19 +93,15 @@
 
 
 			///
-
-
-			$("#Users_Signin").attr("href", config_websvr_data.mySignIn_url());
-
-			$("#Guest_Signin").on("click", function () {
-				$(this).attr("href", config_websvr_data.guest_url());//
-			})
-
-
 			var url = "" + document.location.href
 			if (url.indexOf(".github.io/") >= 0) {
 				$("#test").text("")
 			}
+		})
+
+		$("#Users_Signin").attr("href", config_websvr_data.mySignIn_url());
+		$("#Guest_Signin").on("click", function () {
+			$(this).attr("href", config_websvr_data.guest_url());//
 		})
 	}
 
@@ -118,7 +109,7 @@
 
 <body>
 	<div class="xsmallnote" id="DefaultSignInIP">
-		
+
 		Test SignInIP=
 		<a id="SignInIPaddress" style="background-color: yellow;" contenteditable="true"></a>
 
