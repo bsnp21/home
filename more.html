@@ -11,7 +11,9 @@
 	<script src="https://wdingbox.github.io/ham12/jq/jquery-2_1_3.min.js"></script>
 	<script src="https://wdingbox.github.io/ham12/utility/htmf/bsnp/BibleStudyNotePad.js?v2021-01">
 	</script>
-	
+
+	<script src="./js/config_websvr_data.js"></script>
+
 	<script src="./js/quotestr.js"></script>
 	<script src="./js/supportstr.js"></script>
 	<script src="./js/techfeaturestr.htm.js"></script>
@@ -55,7 +57,58 @@
 	}
 </style>
 
+<script>
+	$(function () {
+		svc_ip_cfg_face_links()
+	})
+
+	function svc_ip_cfg_face_links() {
+		$("#SignInIPaddress").text(config_websvr_data.ip)
+		$("#SignInIPaddress").on("keyup click", function () {
+			var tmpip = $("#SignInIPaddress").text()
+
+			$("#test_ip_api").attr("href", config_websvr_data.svr_api_url(tmpip));
+			$("#test_ip_api").text(config_websvr_data.svr_api_url(tmpip))
+
+			$("#test_other_ip").attr("href", config_websvr_data.mySignIn_url(tmpip));
+			$("#test_other_ip").text(config_websvr_data.mySignIn_url(tmpip))
+			
+
+			var tst = `http://${tmpip}/wdaws/bb/test_restapi/api_demo_local.htm?sip=http://${tmpip}:7778&SSID=1742863864874wdingpba&vision=public`
+			$("#test_restapi").attr("href", tst);
+			$("#test_restapi").text(tst)
+
+			var tst = `http://${tmpip}/wdaws/tools/BibleStudy/KingsTable.htm?sip=http://${tmpip}:7778&SSID=1742863864874wdingpba&vision=public`
+			$("#test_tools_BibleStudy").attr("href", tst);
+			$("#test_tools_BibleStudy").text(tst)
+			
+
+			///
+			var url = "" + document.location.href
+			if (url.indexOf(".github.io/") >= 0) {
+				$("#test").text("")
+			}
+		})
+	}
+
+</script>
 <body>
+	<div class="xsmallnote" id="DefaultSignInIP">
+
+		Test SignInIP=
+		<a id="SignInIPaddress" style="background-color: yellow;" contenteditable="true"></a><br>
+
+		<a id="test_ip_api" href="https://bsnp21.github.io/home/"></a><br>
+		<a id="test_other_ip" href="https://bsnp21.github.io/home/"></a><br>
+		<a id="test_restapi" href="https://bsnp21.github.io/home/"></a><br>
+
+		<a id="test_tools_BibleStudy" href="https://bsnp21.github.io/home/"></a><br>
+
+		<a href="https://bsnp21.github.io/home/">.</a>
+
+	</div>
+
+
 	<div style="text-align: center;margin-top: 50px;">Ancient Jews and Chinese Oracle Clock<br>
 	<iframe src="https://bsnp21.github.io/tools/oclock/arc_sector/Arclock.html">aaaaa</iframe>
 </div>

@@ -73,26 +73,6 @@
 	})
 
 	function svc_ip_cfg_face_links() {
-		$("#SignInIPaddress").text(config_websvr_data.ip)
-		$("#SignInIPaddress").on("keyup click", function () {
-			var tmpip = $("#SignInIPaddress").text()
-			$("#test_other_ip").attr("href", config_websvr_data.mySignIn_url(tmpip));
-			$("#test_other_ip").text(config_websvr_data.mySignIn_url(tmpip))
-			$("#test_ip_api").attr("href", config_websvr_data.svr_api_url(tmpip));
-			$("#test_ip_api").text(config_websvr_data.svr_api_url(tmpip))
-
-			var tst = `http://${tmpip}/wdaws/bb/test_restapi/api_demo_local.htm?sip=http://${tmpip}:7778&SSID=1742863864874wdingpba&vision=public`
-			$("#test_restapi").attr("href", tst);
-			$("#test_restapi").text(tst)
-
-
-			///
-			var url = "" + document.location.href
-			if (url.indexOf(".github.io/") >= 0) {
-				$("#test").text("")
-			}
-		})
-
 		$("#Users_Signin").attr("href", config_websvr_data.mySignIn_url());
 		$("#Guest_Signin").on("click", function () {
 			$(this).attr("href", config_websvr_data.guest_url());//
@@ -102,22 +82,7 @@
 </script>
 
 <body>
-	<div class="xsmallnote" id="DefaultSignInIP">
-
-		Test SignInIP=
-		<a id="SignInIPaddress" style="background-color: yellow;" contenteditable="true"></a>
-
-		<a id="test_ip_api" href="https://bsnp21.github.io/home/"></a><br>
-		<a id="test_other_ip" href="https://bsnp21.github.io/home/"></a><br>
-		<a id="test_restapi" href="https://bsnp21.github.io/home/"></a><br>
-
-		<a id="test_" href="https://bsnp21.github.io/home/"></a><br>
-
-		<a href="https://bsnp21.github.io/home/">.</a>
-
-	</div>
-
-
+	
 
 	<img src="img/qrcode_bsnp21.github.io.png"></img>
 
